@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conversational Interface</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://ka-f.fontawesome.com/" />
+
+    <script
+      src="https://kit.fontawesome.com/b35edf3a51.js"
+      crossorigin="anonymous"
+      defer=""
+    ></script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section id="config">
+      <!-- <div class="close"><i class="fa fa-close"></i></div> -->
+      <h1>Settings</h1>
+      <div>
+        <p>
+          Set the below settings and then lauch app to test its behavior for
+          different situations.
+        </p>
+      </div>
+      <div>
+        <div class="input-group">
+          <label for="username">Username: </label>
+          <input type="text" id="username" name="username" />
+        </div>
+      </div>
+      <button class="launch">Launch Webapp</button>
+    </section>
+    <section id="ai">
+      <header>
+        <!-- <div class="configButton"><div class="fa-solid fa-cog"></div></div> -->
+
+        <div id="mode-selection" class="flexbox">
+          <button class="mode active" id="mode-keyboard">
+            <i class="fa-solid fa-keyboard"></i>
+          </button>
+          <button class="mode" id="mode-voice">
+            <i class="fa-solid fa-microphone"></i>
+          </button>
+        </div>
+      </header>
+      <div id="chat-body" class="flexbox">
+        <div class="user-message">...</div>
+        <div class="ai-response">...</div>
+      </div>
+      <div id="product-view"></div>
+
+      <div id="prompt-input" class="flexbox">
+        <div id="text-prompt-input" class="flexbox">
+          <input
+            type="text"
+            id="text-input"
+            placeholder="Message Your Shopping Assistant"
+          />
+          <button id="text-input-submit">
+            <div class="fa-solid fa-paper-plane"></div>
+          </button>
+        </div>
+        <div id="voice-prompt-input" style="display: none"></div>
+      </div>
+    </section>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="config.js"></script>
+    <script src="chat.js"></script>
+    <script>
+      function launchApp() {
+        sendMessage("...");
+      }
+      window.onload = () => {
+        fillConfigData();
+      };
+    </script>
+  </body>
+</html>
